@@ -99,7 +99,7 @@ if __name__ == '__main__':
         blat_dir = blat_dir[0][11:]
     else:
         blat_dir = None
-    
+
     _BT_ = ""
     if blat_dir:
         _BT_ = blat_dir.rstrip("/")+"/"
@@ -219,8 +219,8 @@ if __name__ == '__main__':
             time.sleep(1) # seconds
         print >>sys.stderr,'-------------------------------------------------------------------------'
         print >>sys.stderr,"Waiting for BLAT to finish running..."
-        for p in proc:
-            p.communicate()
+        while proc:
+            p.pop().communicate()
         print >>sys.stderr,"BLAT finished running."
         print >>sys.stderr,'-------------------------------------------------------------------------'
         print >>sys.stderr,"Joining BLAT's output files..."
