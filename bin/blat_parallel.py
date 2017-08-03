@@ -220,7 +220,7 @@ if __name__ == '__main__':
         print >>sys.stderr,'-------------------------------------------------------------------------'
         print >>sys.stderr,"Waiting for BLAT to finish running..."
         while proc:
-            p.pop().communicate()
+            proc.pop().communicate()
         print >>sys.stderr,"BLAT finished running."
         print >>sys.stderr,'-------------------------------------------------------------------------'
         print >>sys.stderr,"Joining BLAT's output files..."
